@@ -1,21 +1,45 @@
 PATH="/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin"
 
+# DeepStorageUnitV2
+
 # Snapshot every 15 minutes
 # Keep 6 hours of these, 24 total
-*/15 * * * * root which zfs-auto-snapshot > /dev/null || exit 0 ; zfs-auto-snapshot --quiet --syslog --label=frequently --keep=24 //
+*/15 * * * * root which zfs-auto-snapshot > /dev/null || exit 0 ; zfs-auto-snapshot --quiet --syslog --label=frequently --keep=24 --recursive DeepStorageUnitV2
 
 # Shapshot every hour
 # Keep 3 days of these, 72 total
-0 * * * * root which zfs-auto-snapshot > /dev/null || exit 0 ; zfs-auto-snapshot --quiet --syslog --label=hourly --keep=72 //
+0 * * * * root which zfs-auto-snapshot > /dev/null || exit 0 ; zfs-auto-snapshot --quiet --syslog --label=hourly --keep=72 --recursive DeepStorageUnitV2
 
 # Snapshot every day
 # Keep 2 weeks of these, 14 total
-0 0 * * * root which zfs-auto-snapshot > /dev/null || exit 0 ; zfs-auto-snapshot --quiet --syslog --label=daily --keep=14 //
+0 0 * * * root which zfs-auto-snapshot > /dev/null || exit 0 ; zfs-auto-snapshot --quiet --syslog --label=daily --keep=14 --recursive DeepStorageUnitV2
 
 # Snapshot every week
 # Keep ~2 months of these, 10 total
-0 0 * * 0 root which zfs-auto-snapshot > /dev/null || exit 0 ; zfs-auto-snapshot --quiet --syslog --label=weekly --keep=10 //
+0 0 * * 0 root which zfs-auto-snapshot > /dev/null || exit 0 ; zfs-auto-snapshot --quiet --syslog --label=weekly --keep=10 --recursive DeepStorageUnitV2
 
 # Snapshot every month
 # Keep 1/2 year of these, 6 total
-0 0 1 * * root which zfs-auto-snapshot > /dev/null || exit 0 ; zfs-auto-snapshot --quiet --syslog --label=monthly --keep=6 //
+0 0 1 * * root which zfs-auto-snapshot > /dev/null || exit 0 ; zfs-auto-snapshot --quiet --syslog --label=monthly --keep=6 --recursive DeepStorageUnitV2
+
+
+
+# Snapshot every 15 minutes
+# Keep 6 hours of these, 24 total
+*/15 * * * * root which zfs-auto-snapshot > /dev/null || exit 0 ; zfs-auto-snapshot --quiet --syslog --label=frequently --keep=24 --recursive SuperDeepStorageUnit
+
+# Shapshot every hour
+# Keep 3 days of these, 72 total
+0 * * * * root which zfs-auto-snapshot > /dev/null || exit 0 ; zfs-auto-snapshot --quiet --syslog --label=hourly --keep=72 --recursive SuperDeepStorageUnit
+
+# Snapshot every day
+# Keep 2 weeks of these, 14 total
+0 0 * * * root which zfs-auto-snapshot > /dev/null || exit 0 ; zfs-auto-snapshot --quiet --syslog --label=daily --keep=14 --recursive SuperDeepStorageUnit
+
+# Snapshot every week
+# Keep ~2 months of these, 10 total
+0 0 * * 0 root which zfs-auto-snapshot > /dev/null || exit 0 ; zfs-auto-snapshot --quiet --syslog --label=weekly --keep=10 --recursive SuperDeepStorageUnit
+
+# Snapshot every month
+# Keep 1/2 year of these, 6 total
+0 0 1 * * root which zfs-auto-snapshot > /dev/null || exit 0 ; zfs-auto-snapshot --quiet --syslog --label=monthly --keep=6 --recursive SuperDeepStorageUnit
