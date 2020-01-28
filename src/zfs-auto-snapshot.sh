@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # zfs-auto-snapshot for Linux
 # Automatically create, rotate, and destroy periodic ZFS snapshots.
@@ -367,7 +367,7 @@ do
 			opt_do_snapshots=''
 			shift 1
 			;;
-                (-L|--localtime)
+        (-L|--localtime)
 			opt_date=''
 			opt_timezone='-%Z'
 			shift 1
