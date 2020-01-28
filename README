@@ -1,3 +1,9 @@
+A customized version of zfs-auto-snapshot for my personal uses, including
+fixes for DST, cron running on the hour, specific retention periods, and
+some other default options set.
+
+
+
 zfs-auto-snapshot:
 
 An alternative implementation of the zfs-auto-snapshot service for Linux
