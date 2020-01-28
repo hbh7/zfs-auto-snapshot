@@ -2,7 +2,9 @@ A customized version of zfs-auto-snapshot for my personal uses, including
 fixes for DST, cron running on the hour, specific retention periods, and
 some other default options set.
 
-
+This is a mostly personal-use repo, so I have included very specific things
+such as in my cron scripts. They should be obvious and easy enough to tweak 
+to your liking if you wanted to use this repo as well.
 
 zfs-auto-snapshot:
 
